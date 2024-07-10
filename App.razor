@@ -1,0 +1,46 @@
+﻿<div style="max-width: 900px; margin: auto; padding: 24px; display: flex; gap: 24px;">
+    <div>
+        <IgbInput @ref="firstInput" Value="First" Label=" First Input" style="width: 100%; margin-bottom: 10px;" ></IgbInput>
+        <IgbButton @onclick=selectInput1 style="width: 100%;">テキスト選択</IgbButton>
+    </div>
+    <div>
+        <IgbInput @ref="secondInput" Value="Second" Label="Second Input" style="width: 100%; margin-bottom: 10px;" ></IgbInput>
+        <IgbButton @onclick=selectInput2 style="width: 100%;">テキスト選択</IgbButton>
+    </div>
+    <div>
+        <IgbInput @ref="thirdInput" Value="Third" Label="Third Input" style="width: 100%; margin-bottom: 10px;" ></IgbInput>
+        <IgbButton @onclick=selectInput3 style="width: 100%;">テキスト選択</IgbButton>
+    </div>
+
+</div>
+
+@code {
+    private IgbInput? firstInput;
+    private IgbInput? secondInput;
+    private IgbInput? thirdInput;
+
+    private async Task selectInput1()
+    {
+        if (firstInput != null)
+        {
+            await firstInput.SelectAsync();
+        }
+    }
+    private async Task selectInput2()
+    {
+        if (secondInput != null)
+        {
+            await secondInput.SelectAsync();
+        }
+    }
+    private async Task selectInput3()
+    {
+        if (thirdInput != null)
+        {
+            await thirdInput.SelectAsync();
+        }
+    }
+
+}
+
+
